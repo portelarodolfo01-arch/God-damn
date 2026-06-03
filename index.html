@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Daily Task Tracker</h1>
+            <p class="date" id="currentDate"></p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="Add a new task..." 
+                    class="task-input"
+                >
+                <select id="prioritySelect" class="priority-select">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button id="addTaskBtn" class="add-btn">Add Task</button>
+            </div>
+        </div>
+
+        <div class="tasks-section">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Total Tasks:</span>
+                    <span class="stat-value" id="totalTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Completed:</span>
+                    <span class="stat-value completed" id="completedTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Remaining:</span>
+                    <span class="stat-value pending" id="remainingTasks">0</span>
+                </div>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div class="sort-buttons">
+                <label>Sort by:</label>
+                <button class="sort-btn active" data-sort="date">Date Added</button>
+                <button class="sort-btn" data-sort="priority">Priority</button>
+                <button class="sort-btn" data-sort="name">Name</button>
+            </div>
+
+            <ul class="task-list" id="taskList"></ul>
+
+            <div class="empty-state" id="emptyState">
+                <p>No tasks yet. Add one to get started! 🚀</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-buttons">
+                <button id="clearBtn" class="clear-btn">Clear Completed Tasks</button>
+                <button id="exportBtn" class="export-btn">Export Tasks</button>
+                <button id="importBtn" class="import-btn">Import Tasks</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
