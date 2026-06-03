@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="joke-style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>😂 Random Joke Generator</h1>
+            <p class="subtitle">Get a laugh whenever you need one!</p>
+        </header>
+
+        <div class="content-section">
+            <div class="joke-card" id="jokeCard">
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Loading joke...</p>
+                </div>
+                <div class="joke-content" id="jokeContent" style="display: none;">
+                    <p class="joke-text" id="jokeText"></p>
+                    <p class="joke-type" id="jokeType"></p>
+                </div>
+                <div class="placeholder" id="placeholder">
+                    <p>Click the button below to get a joke! 👇</p>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="getJokeBtn" class="btn btn-primary">Get New Joke</button>
+                <button id="shareBtn" class="btn btn-secondary" disabled>Share Joke</button>
+                <button id="favoriteBtn" class="btn btn-favorite" disabled>❤️ Favorite</button>
+            </div>
+
+            <div class="category-section">
+                <label for="categorySelect">Choose Category:</label>
+                <select id="categorySelect" class="category-select">
+                    <option value="random">Random (Any)</option>
+                    <option value="general">General</option>
+                    <option value="programming">Programming</option>
+                    <option value="knock-knock">Knock-Knock</option>
+                </select>
+            </div>
+
+            <div class="favorites-section">
+                <div class="favorites-header">
+                    <h3>❤️ Favorite Jokes</h3>
+                    <button id="clearFavoritesBtn" class="btn btn-small" disabled>Clear All</button>
+                </div>
+                <div class="favorites-list" id="favoritesList">
+                    <p class="empty-message">No favorites yet. Save your favorite jokes!</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by <a href="https://official-joke-api.appspot.com/" target="_blank">Official Joke API</a></p>
+        </footer>
+    </div>
+
+    <script src="joke-script.js"></script>
+</body>
+</html>
